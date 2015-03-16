@@ -1,0 +1,17 @@
+#include "JointSpaceControlTestDlgApp.h"
+
+bool JointSpaceControlTestDlgApp::OnInit()
+{
+	if(!wxApp::OnInit()) {
+		printf("[ERROR : JointSpaceControlTestDlgApp::OnInit() -> Can't initialize the wxApp::OnInit()");
+		return false;
+	}
+
+	return true;
+}
+
+int JointSpaceControlTestDlgApp::OnRun()
+{
+
+	return 0;
+}

@@ -1,0 +1,18 @@
+/*
+ * JointSpaceControlTestDlgApp.cpp
+ *
+ *  Created on: 2014. 12. 20.
+ *      Author: root
+ */
+
+#include "JointSpaceControlTestDlgApp.h"
+
+JointSpaceControlTestDlgApp::JointSpaceControlTestDlgApp() {
+	// TODO Auto-generated constructor stub
+
+}
+
+JointSpaceControlTestDlgApp::~JointSpaceControlTestDlgApp() {
+	// TODO Auto-generated destructor stub
+}
+

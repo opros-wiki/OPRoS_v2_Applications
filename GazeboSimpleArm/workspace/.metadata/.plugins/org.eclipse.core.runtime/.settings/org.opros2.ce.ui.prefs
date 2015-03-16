@@ -1,0 +1,2 @@
+KEY_ROBOTS_ENTRY=<?xml version\="1.0" encoding\="euc-kr"?>\r\n<robots>\r\n  <robot name\="robot1">\r\n    <node name\="node1" ip.addr\="127.0.0.1" ip.port\="2002" />\r\n  </robot>\r\n</robots>\r\n\r\n
+eclipse.preferences.version=1

@@ -1,0 +1,7 @@
+Manifest-Version:1.0
+Archive-type:OPRoS_Component
+Archive-name:JointSpaceControlTestComp.tar
+Archive-description:
+Archive-Element:JointSpaceControlTestComp.xml
+Shared-library:lib/
+

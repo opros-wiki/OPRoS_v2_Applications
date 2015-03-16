@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;JointSpaceControlTestComp/JointSpaceControlCoodinatorRequired.h&apos; to &apos;JointSpaceControlCoorinatorServiceRequired_bak.h&apos;" description="Rename resource &apos;JointSpaceControlCoodinatorRequired.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="JointSpaceControlCoodinatorRequired.h" name="JointSpaceControlCoorinatorServiceRequired_bak.h" stamp="1421239087550" updateReferences="true"/>
+</session>

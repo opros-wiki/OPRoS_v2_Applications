@@ -1,0 +1,18 @@
+/*
+ * DynamicsControl.cpp
+ *
+ *  Created on: 2014. 12. 7.
+ *      Author: root
+ */
+
+#include "DynamicsControl.h"
+
+DynamicsControl::DynamicsControl() {
+	// TODO Auto-generated constructor stub
+
+}
+
+DynamicsControl::~DynamicsControl() {
+	// TODO Auto-generated destructor stub
+}
+

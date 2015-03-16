@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component_profile>
+	<id>a9509665-067f-42fe-bae7-5b086818c4d0</id>
+	<name>JointSpaceControlCoodinatorComp</name>
+	<version>1.0</version>
+	<layout>165,293,345,200</layout>
+	<collapsed>0</collapsed>
+	<copyright>
+		<company>
+			<name>JointSpaceControlCoodinatorComp</name>
+			<phone />
+			<address />
+			<homepage />
+		</company>
+		<license_policy />
+	</copyright>
+	<execution_environment>
+		<library_type>so</library_type>
+		<library_name>libJointSpaceControlCoodinatorComp.so</library_name>
+		<impl_language>Linux C++</impl_language>
+		<compiler>Linux g++</compiler>
+		<app_domain />
+		<app_robot />
+	</execution_environment>
+	<execution_semantics>
+		<type>periodic</type>
+		<period>4</period>
+		<priority>5</priority>
+		<instance_creation>multiple</instance_creation>
+	</execution_semantics>
+	<properties />
+	<data_type_list />
+	<defined_data_types />
+	<defined_service_types>
+		<defined_service_type>JointSpaceControlService.xml</defined_service_type>
+		<defined_service_type>ManipulatorService.xml</defined_service_type>
+		<defined_service_type>TrajectoryGenerationService.xml</defined_service_type>
+		<defined_service_type>JointSpaceControlCoorinatorService.xml</defined_service_type>
+	</defined_service_types>
+	<exports />
+	<ports>
+		<service_port>
+			<name>JointSpaceControlService</name>
+			<description />
+			<type>JointSpaceControlService</type>
+			<usage>required</usage>
+			<reference>JointSpaceControlService.xml</reference>
+			<layout>494,461,193,32</layout>
+		</service_port>
+		<service_port>
+			<name>ManipulatorService</name>
+			<description />
+			<type>ManipulatorService</type>
+			<usage>required</usage>
+			<reference>ManipulatorService.xml</reference>
+			<layout>494,388,152,32</layout>
+		</service_port>
+		<service_port>
+			<name>TrajectoryGenerationService</name>
+			<description />
+			<type>TrajectoryGenerationService</type>
+			<usage>required</usage>
+			<reference>TrajectoryGenerationService.xml</reference>
+			<layout>494,318,212,32</layout>
+		</service_port>
+		<service_port>
+			<name>JointSpaceControlCoordinatorService</name>
+			<description />
+			<type>JointSpaceControlCoorinatorService</type>
+			<usage>provided</usage>
+			<reference>JointSpaceControlCoorinatorService.xml</reference>
+			<layout>-85,393,266,32</layout>
+		</service_port>
+	</ports>
+</component_profile>
+

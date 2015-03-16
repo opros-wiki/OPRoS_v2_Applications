@@ -1,0 +1,32 @@
+04:50:19 **** Incremental Build of configuration Release for project JointSpacePdControlWithGravityCompensationComp ****
+make all 
+Building file: ../JointSpacePdControlWithGravityCompensationComp.cpp
+Invoking: GCC C++ Compiler
+g++ -D_OPROS_DEBUG_ -I/root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include -I/root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device -I/usr/local/include/kdl -I/usr/eigen -O2 -g -Wall -c -fPIC -fmessage-length=0 -o "JointSpacePdControlWithGravityCompensationComp.o" "../JointSpacePdControlWithGravityCompensationComp.cpp" && \
+	echo -n 'JointSpacePdControlWithGravityCompensationComp.d' ./ > 'JointSpacePdControlWithGravityCompensationComp.d' && \
+	g++ -MM -MG -P -w -D_OPROS_DEBUG_ -I/root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include -I/root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device -I/usr/local/include/kdl -I/usr/eigen -O2 -g -Wall -c -fPIC -fmessage-length=0   "../JointSpacePdControlWithGravityCompensationComp.cpp" >> 'JointSpacePdControlWithGravityCompensationComp.d'
+In file included from /root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/OPRoSTypes.h:53:0,
+                 from /root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/Event.h:18,
+                 from /root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/Component.h:18,
+                 from /root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/OPRoSInclude.h:8,
+                 from ../JointSpacePdControlWithGravityCompensationComp.cpp:7:
+/root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/archive/opros_type_info.h: In member function ?˜std::string enumNameSelector<T, N>::typeString()??:
+/root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/archive/opros_type_info.h:132:2: warning: no return statement in function returning non-void [-Wreturn-type]
+In file included from /root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/SymbolService.h:24:0,
+                 from /root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/ServiceUtils.h:18,
+                 from /root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/OPRoSInclude.h:16,
+                 from ../JointSpacePdControlWithGravityCompensationComp.cpp:7:
+/root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/RequiredMethod.h: In constructor ?˜RequiredMethod<void>::RequiredMethod(const string&, int, int)??:
+/root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/RequiredMethod.h:659:6: warning: ?˜RequiredMethod<void>::m_arity?? will be initialized after [-Wreorder]
+/root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/RequiredMethod.h:667:31: warning:   base ?˜RequiredMethodInterface?? [-Wreorder]
+/root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/RequiredMethod.h:665:2: warning:   when initialized here [-Wreorder]
+Finished building: ../JointSpacePdControlWithGravityCompensationComp.cpp
+ 
+Building target: libJointSpacePdControlWithGravityCompensationComp.so
+Invoking: GCC C++ Linker
+g++ -L/root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/lib -shared -o "libJointSpacePdControlWithGravityCompensationComp.so"  ./DynamicsControl.o ./JointSpaceControl.o ./JointSpacePdControlWithGravityCompensation.o ./JointSpacePdControlWithGravityCompensationComp.o ./ManipulatorControl.o   -lOPRoSCDL -lorocos-kdl
+Finished building target: libJointSpacePdControlWithGravityCompensationComp.so
+ 
+
+04:50:22 Build Finished (took 3s.62ms)
+

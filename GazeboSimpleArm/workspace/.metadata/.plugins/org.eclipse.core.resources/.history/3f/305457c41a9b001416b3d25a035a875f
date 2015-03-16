@@ -1,0 +1,147 @@
+#include "GazeboSimpleArm.h"
+
+GazeboSimpleArm *gazeboSimpleArmPtr = NULL;
+std::vector<double> gActualTorque(4);
+std::vector<double> gActualVelocity(4);
+std::vector<double> gActualPosition(4);
+
+void MessageCallBack(JointStatusResponsePtr &_msg)
+{
+	// Dump the message contents to stdout.
+	//std::cout << _msg->DebugString();
+
+	for(size_t i = 0; i < 4; i++) {
+		gActualTorque[i] = _msg->joint(i).effort();
+		gActualVelocity[i] = _msg->joint(i).velocity();
+		gActualPosition[i] = _msg->joint(i).position();
+	}
+
+	gazeboSimpleArmPtr->UpdateJointInfo(gActualTorque, gActualVelocity, gActualPosition);
+}
+
+GazeboSimpleArm::GazeboSimpleArm(void)
+{
+	gazeboSimpleArmPtr = this;
+}
+
+GazeboSimpleArm::~GazeboSimpleArm(void)
+{
+	Finalize();
+}
+
+int32_t GazeboSimpleArm::Initialize(OPRoS::Property props);
+{
+	int state = pthread_mutex_init(&_mutex, NULL);
+	if(state) {
+		return -1;
+	}
+
+	// Load gazebo
+	gazebo::setupClient(0, NULL);
+
+	return API_SUCCESS;
+}
+
+int32_t GazeboSimpleArm::Finalize(void)
+{
+	// Make sure to shut everything down.
+	gazebo::shutdown();
+
+	pthread_mutex_destroy(&_mutex);
+
+	return API_SUCCESS;
+}
+
+int32_t GazeboSimpleArm::Enable(void)
+{
+	// Create our node for communication
+	gazebo::transport::NodePtr node(new gazebo::transport::Node());
+	node->Init();
+
+	// Listen to Gazebo world_stats topic
+	_sub = node->Subscribe("~/simple_arm/joint_status", MessageCallBack);
+	_pub = node->Advertise<my_msgs::msgs::JointEffortCmdRequest>("~/simple_arm/cmd");
+	_pub->WaitForConnection();
+
+	return 0;
+}
+
+int32_t GazeboSimpleArm::Disable(void)
+{
+	return 0;
+}
+
+int GazeboSimpleArm::SetTorque(std::vector<double> &torque)
+{
+	if(torque.size() != _jointControllerProfile.size()) {
+		return -1;
+	}
+
+	my_msgs::msgs::JointEffortCmdRequest request;
+	request.add_name("arm_shoulder_pan_joint");
+	request.add_effort(torque[0]);
+
+	request.add_name("arm_elbow_pan_joint");
+	request.add_effort(torque[1]);
+
+	request.add_name("arm_wrist_lift_joint");
+	request.add_effort(torque[2]);
+
+	request.add_name("arm_wrist_roll_joint");
+	request.add_effort(torque[3]);
+
+	_pub->Publish(request);
+
+	return 0;
+}
+
+int GazeboSimpleArm::GetTorque(std::vector<double> &torque)
+{
+	if(torque.size() != _actualTorque.size()) {
+		torque.resize(_actualTorque.size());
+	}
+
+	pthread_mutex_lock(&_mutex);
+	memcpy(&torque[0], &_actualTorque[0], sizeof(double)*torque.size());
+	pthread_mutex_unlock(&_mutex);
+
+	return 0;
+}
+
+int GazeboSimpleArm::GetVelocity(std::vector<double> &velocity)
+{
+	if(velocity.size() != _actualVelocity.size()) {
+		velocity.resize(_actualVelocity.size());
+	}
+
+	pthread_mutex_lock(&_mutex);
+	memcpy(&velocity[0], &_actualVelocity[0], sizeof(double)*velocity.size());
+	pthread_mutex_unlock(&_mutex);
+
+	return 0;
+}
+
+int GazeboSimpleArm::GetPosition(std::vector<double> &position)
+{
+	if(position.size() != _actualPosition.size()) {
+		position.resize(_actualPosition.size());
+	}
+
+	pthread_mutex_lock(&_mutex);
+	memcpy(&position[0], &_actualPosition[0], sizeof(double)*position.size());
+	pthread_mutex_unlock(&_mutex);
+
+	return 0;
+}
+
+void GazeboSimpleArm::UpdateJointInfo(std::vector<double> &actualTorque, std::vector<double> &actualVelocity, std::vector<double> &actualPosition)
+{
+	pthread_mutex_lock(&_mutex);
+
+	_actualTorque = actualTorque;
+	_actualVelocity = actualVelocity;
+	_actualPosition = actualPosition;
+
+	pthread_mutex_unlock(&_mutex);
+}
+

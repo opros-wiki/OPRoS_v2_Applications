@@ -1,0 +1,25 @@
+21:39:18 **** Build of configuration Release for project ManipulatorApi ****
+make all 
+Building file: ../ManipulatorApi.cpp
+Invoking: GCC C++ Compiler
+g++ -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device -O2 -g -Wall -c -fPIC -fmessage-length=0 -o "ManipulatorApi.o" "../ManipulatorApi.cpp" && \
+	echo -n 'ManipulatorApi.d' ./ > 'ManipulatorApi.d' && \
+	g++ -MM -MG -P -w -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device -O2 -g -Wall -c -fPIC -fmessage-length=0   "../ManipulatorApi.cpp" >> 'ManipulatorApi.d'
+In file included from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device/../archive/opros_archive.h:20:0,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device/ApiTypes.h:43,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device/OprosDevice.h:40,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device/Manipulator.h:39,
+                 from ../ManipulatorApi.h:11,
+                 from ../ManipulatorApi.cpp:9:
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/archive/opros_type_info.h: In member function ?˜std::string enumNameSelector<T, N>::typeString()??:
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/archive/opros_type_info.h:132:2: warning: no return statement in function returning non-void [-Wreturn-type]
+Finished building: ../ManipulatorApi.cpp
+ 
+Building target: libManipulatorApi.so
+Invoking: GCC C++ Linker
+g++ -shared -o "libManipulatorApi.so"  ./ManipulatorApi.o   
+Finished building target: libManipulatorApi.so
+ 
+
+21:39:19 Build Finished (took 1s.255ms)
+

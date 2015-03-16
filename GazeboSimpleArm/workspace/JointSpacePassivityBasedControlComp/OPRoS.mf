@@ -1,0 +1,7 @@
+Manifest-Version:1.0
+Archive-type:OPRoS_Component
+Archive-name:JointSpacePassivityBasedControlComp.tar
+Archive-description:
+Archive-Element:JointSpacePassivityBasedControlComp.xml
+Shared-library:lib/
+

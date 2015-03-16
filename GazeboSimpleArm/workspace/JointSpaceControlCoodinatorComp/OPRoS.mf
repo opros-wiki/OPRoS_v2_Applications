@@ -1,0 +1,7 @@
+Manifest-Version:1.0
+Archive-type:OPRoS_Component
+Archive-name:JointSpaceControlCoodinatorComp.tar
+Archive-description:
+Archive-Element:JointSpaceControlCoodinatorComp.xml
+Shared-library:lib/
+

@@ -1,0 +1,17 @@
+/*
+ * ManipulatorControl.h
+ *
+ *  Created on: 2014. 12. 7.
+ *      Author: root
+ */
+
+#ifndef MANIPULATORCONTROL_H_
+#define MANIPULATORCONTROL_H_
+
+class ManipulatorControl {
+public:
+	ManipulatorControl();
+	virtual ~ManipulatorControl();
+};
+
+#endif /* MANIPULATORCONTROL_H_ */

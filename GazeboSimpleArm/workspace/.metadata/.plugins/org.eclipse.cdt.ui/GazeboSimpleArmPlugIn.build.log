@@ -1,0 +1,10 @@
+04:50:48 **** Build of configuration Debug for project GazeboSimpleArmPlugIn ****
+make all 
+Building target: libGazeboSimpleArmPlugIn.so
+Invoking: GCC C++ Linker
+g++ -L"/root/OPRoS_Linux/OPRoS_IDE_Linux_v2.0.8x86/workspace/GazeboJointMessage/Release" -shared -o "libGazeboSimpleArmPlugIn.so"  ./joint_control_test_plugin.o   -lGazeboJointMessage `pkg-config --libs protobuf` `pkg-config --libs gazebo` `pkg-config --libs sdformat`
+Finished building target: libGazeboSimpleArmPlugIn.so
+ 
+
+04:50:48 Build Finished (took 205ms)
+

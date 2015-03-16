@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component_profile>
+	<id>05961ebd-d30d-4382-9f32-6ed568a14de8</id>
+	<name>TwoComp</name>
+	<version>1.0</version>
+	<layout>768,132,360,276</layout>
+	<collapsed>0</collapsed>
+	<copyright>
+		<company>
+			<name>KITECH</name>
+			<phone>KITECH</phone>
+			<address>KITECH</address>
+			<homepage>KITECH</homepage>
+		</company>
+		<license_policy />
+	</copyright>
+	<execution_environment>
+		<library_type>so</library_type>
+		<library_name>libTwoComp.so</library_name>
+		<impl_language>Linux C++</impl_language>
+		<compiler>Linux g++</compiler>
+		<app_domain />
+		<app_robot />
+	</execution_environment>
+	<execution_semantics>
+		<type>periodic</type>
+		<period>100</period>
+		<priority>5</priority>
+		<instance_creation>singleton</instance_creation>
+	</execution_semantics>
+	<properties />
+	<data_type_list />
+	<defined_data_types>
+		<defined_data_type>PersonData.xml</defined_data_type>
+	</defined_data_types>
+	<defined_service_types>
+		<defined_service_type>PrintService.xml</defined_service_type>
+	</defined_service_types>
+	<exports />
+	<ports>
+		<service_port>
+			<name>PrintService</name>
+			<description />
+			<type>PrintService</type>
+			<usage>provided</usage>
+			<reference>PrintService.xml</reference>
+			<layout>677,156,107,32</layout>
+		</service_port>
+		<data_port>
+			<name>intDataIn</name>
+			<description />
+			<data_type>int</data_type>
+			<usage>input</usage>
+			<reference />
+			<queueing_policy>LAST</queueing_policy>
+			<queue_size>1</queue_size>
+			<layout>698,216,86,32</layout>
+		</data_port>
+		<data_port>
+			<name>personDataIn</name>
+			<description />
+			<data_type>PersonData</data_type>
+			<usage>input</usage>
+			<reference>PersonData.xml</reference>
+			<queueing_policy>LAST</queueing_policy>
+			<queue_size>1</queue_size>
+			<layout>668,276,116,32</layout>
+		</data_port>
+		<event_port>
+			<name>strEventIn</name>
+			<description />
+			<data_type>std::string</data_type>
+			<usage>input</usage>
+			<layout>691,353,93,32</layout>
+		</event_port>
+	</ports>
+</component_profile>
+

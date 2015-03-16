@@ -1,0 +1,47 @@
+#pragma once
+
+#include <boost/bind.hpp>
+#include <gazebo/physics/physics.hh>
+#include <gazebo/common/common.hh>
+#include <gazebo/transport/transport.hh>
+#include <gazebo/msgs/msgs.hh>
+#include <gazebo/gazebo.hh>
+#include <pthread.h>
+
+#include "joint_effort_cmd.pb.h"
+#include "joint_status.pb.h"
+
+#include "Manipulator.h"
+
+typedef const boost::shared_ptr<const my_msgs::msgs::JointStatusResponse> JointStatusResponsePtr;
+typedef const boost::shared_ptr<const my_msgs::msgs::JointEffortCmdRequest> JointEffortCmdRequestPtr;
+
+class GazeboSimpleArm : public DeviceJointController
+{
+public:
+	GazeboSimpleArm(std::string mame);
+	virtual ~GazeboSimpleArm(void);
+
+private:
+	gazebo::transport::SubscriberPtr _sub;
+	gazebo::transport::PublisherPtr _pub;
+
+	pthread_mutex_t _mutex;
+	std::vector<double> _actualTorque;
+	std::vector<double> _actualVelocity;
+	std::vector<double> _actualPosition;
+
+public:
+	int Initialize(void);
+	int Finalize(void);
+	int Reset(void);
+	int Enable(void);
+	int Disable(void);
+
+	int SetTorque(std::vector<double> &torque);
+	int GetTorque(std::vector<double> &torque);
+	int GetVelocity(std::vector<double> &velocity);
+	int GetPosition(std::vector<double> &position);
+
+	void UpdateJointInfo(std::vector<double> &actualTorque, std::vector<double> &actualVelocity, std::vector<double> &actualPosition);
+};

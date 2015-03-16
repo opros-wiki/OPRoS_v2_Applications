@@ -1,0 +1,15 @@
+#include "JointSpaceControlTestDlg.h"
+
+JointSpaceControlTestDlg::JointSpaceControlTestDlg(const wxChar *title, int x, int y)
+: wxDialog(NULL, wxID_ANY, title, wxPoint(x, y), wxSize(300, 300))
+{
+	printf("test\n.");
+	m_panel = new wxPanel(this, wxID_ANY);
+	Centre();
+}
+
+JointSpaceControlTestDlg::~JointSpaceControlTestDlg()
+{
+
+}
+

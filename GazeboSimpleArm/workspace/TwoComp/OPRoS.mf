@@ -1,0 +1,7 @@
+Manifest-Version:1.0
+Archive-type:OPRoS_Component
+Archive-name:TwoComp.tar
+Archive-description:
+Archive-Element:TwoComp.xml
+Shared-library:lib/
+
