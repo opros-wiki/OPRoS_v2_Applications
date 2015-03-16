@@ -1,0 +1,7 @@
+01:36:31 **** Clean-only build of configuration Release for project TwoComp ****
+make clean 
+rm -rf  ./TwoComp.o  ./TwoComp.d  libTwoComp.so
+ 
+
+01:36:31 Build Finished (took 54ms)
+

@@ -1,0 +1,65 @@
+21:45:39 **** Incremental Build of configuration Release for project ManipulatorComp ****
+make all 
+Building file: ../ManipulatorComp.cpp
+Invoking: GCC C++ Compiler
+g++ -D_OPROS_DEBUG_ -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device -O2 -g -Wall -c -fPIC -fmessage-length=0 -o "ManipulatorComp.o" "../ManipulatorComp.cpp" && \
+	echo -n 'ManipulatorComp.d' ./ > 'ManipulatorComp.d' && \
+	g++ -MM -MG -P -w -D_OPROS_DEBUG_ -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device -O2 -g -Wall -c -fPIC -fmessage-length=0   "../ManipulatorComp.cpp" >> 'ManipulatorComp.d'
+In file included from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/OPRoSTypes.h:53:0,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/Event.h:18,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/Component.h:18,
+                 from ../ManipulatorComp.cpp:5:
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/archive/opros_type_info.h: In member function ‘std::string enumNameSelector<T, N>::typeString()’:
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/archive/opros_type_info.h:132:2: warning: no return statement in function returning non-void [-Wreturn-type]
+In file included from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/SymbolService.h:24:0,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/ServiceUtils.h:18,
+                 from ../ManipulatorComp.cpp:12:
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/RequiredMethod.h: In constructor ‘RequiredMethod<void>::RequiredMethod(const string&, int, int)’:
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/RequiredMethod.h:659:6: warning: ‘RequiredMethod<void>::m_arity’ will be initialized after [-Wreorder]
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/RequiredMethod.h:667:31: warning:   base ‘RequiredMethodInterface’ [-Wreorder]
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/RequiredMethod.h:665:2: warning:   when initialized here [-Wreorder]
+../ManipulatorComp.cpp: In member function ‘virtual ReturnType ManipulatorComp::Enable()’:
+../ManipulatorComp.cpp:96:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:99:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp: In member function ‘virtual ReturnType ManipulatorComp::Disable()’:
+../ManipulatorComp.cpp:119:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:122:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp: In member function ‘virtual ReturnType ManipulatorComp::RunHoming()’:
+../ManipulatorComp.cpp:142:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:145:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp: In member function ‘virtual ReturnType ManipulatorComp::SetTorque(std::vector<OPRoS::Float64>)’:
+../ManipulatorComp.cpp:165:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:168:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp: In member function ‘virtual std::vector<OPRoS::Float64> ManipulatorComp::GetTorque()’:
+../ManipulatorComp.cpp:191:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:194:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp: In member function ‘virtual ReturnType ManipulatorComp::SetVelocity(std::vector<OPRoS::Float64>)’:
+../ManipulatorComp.cpp:214:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:217:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp: In member function ‘virtual std::vector<OPRoS::Float64> ManipulatorComp::GetVelocity()’:
+../ManipulatorComp.cpp:240:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:243:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp: In member function ‘virtual ReturnType ManipulatorComp::SetPosition(std::vector<OPRoS::Float64>, std::vector<OPRoS::UInt32>)’:
+../ManipulatorComp.cpp:263:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:266:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp: In member function ‘virtual std::vector<OPRoS::Float64> ManipulatorComp::GetPosition()’:
+../ManipulatorComp.cpp:289:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:292:15: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp: In member function ‘virtual ReturnType ManipulatorComp::onStart()’:
+../ManipulatorComp.cpp:396:22: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:399:22: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:410:22: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:413:22: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp: In member function ‘virtual ReturnType ManipulatorComp::onStop()’:
+../ManipulatorComp.cpp:429:22: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+../ManipulatorComp.cpp:432:22: warning: large integer implicitly truncated to unsigned type [-Woverflow]
+Finished building: ../ManipulatorComp.cpp
+ 
+Building target: libManipulatorComp.so
+Invoking: GCC C++ Linker
+g++ -L/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/lib -shared -o "libManipulatorComp.so"  ./ManipulatorComp.o   -lOPRoSCDL
+Finished building target: libManipulatorComp.so
+ 
+
+21:45:42 Build Finished (took 2s.811ms)
+

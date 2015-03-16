@@ -1,0 +1,32 @@
+21:40:40 **** Incremental Build of configuration Release for project JointSpaceControlTestComp ****
+make all 
+Building file: ../JointSpaceControlTestComp.cpp
+Invoking: GCC C++ Compiler
+g++ -D_OPROS_DEBUG_ -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device -O2 -g -Wall -c -fPIC -fmessage-length=0 -pthread -o "JointSpaceControlTestComp.o" "../JointSpaceControlTestComp.cpp" && \
+	echo -n 'JointSpaceControlTestComp.d' ./ > 'JointSpaceControlTestComp.d' && \
+	g++ -MM -MG -P -w -D_OPROS_DEBUG_ -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device -O2 -g -Wall -c -fPIC -fmessage-length=0 -pthread   "../JointSpaceControlTestComp.cpp" >> 'JointSpaceControlTestComp.d'
+In file included from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/OPRoSTypes.h:53:0,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/Event.h:18,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/Component.h:18,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/OPRoSInclude.h:8,
+                 from ../JointSpaceControlTestComp.cpp:7:
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/archive/opros_type_info.h: In member function ‘std::string enumNameSelector<T, N>::typeString()’:
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/archive/opros_type_info.h:132:2: warning: no return statement in function returning non-void [-Wreturn-type]
+In file included from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/SymbolService.h:24:0,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/ServiceUtils.h:18,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/OPRoSInclude.h:16,
+                 from ../JointSpaceControlTestComp.cpp:7:
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/RequiredMethod.h: In constructor ‘RequiredMethod<void>::RequiredMethod(const string&, int, int)’:
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/RequiredMethod.h:659:6: warning: ‘RequiredMethod<void>::m_arity’ will be initialized after [-Wreorder]
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/RequiredMethod.h:667:31: warning:   base ‘RequiredMethodInterface’ [-Wreorder]
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/RequiredMethod.h:665:2: warning:   when initialized here [-Wreorder]
+Finished building: ../JointSpaceControlTestComp.cpp
+ 
+Building target: libJointSpaceControlTestComp.so
+Invoking: GCC C++ Linker
+g++ -L/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/lib -shared -o "libJointSpaceControlTestComp.so"  ./JointSpaceControlTestComp.o   -lOPRoSCDL
+Finished building target: libJointSpaceControlTestComp.so
+ 
+
+21:40:42 Build Finished (took 2s.21ms)
+

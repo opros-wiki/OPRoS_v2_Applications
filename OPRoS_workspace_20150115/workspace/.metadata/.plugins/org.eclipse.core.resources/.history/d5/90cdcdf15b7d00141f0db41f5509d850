@@ -1,0 +1,17 @@
+/*
+ * DynamicsControl.h
+ *
+ *  Created on: 2014. 12. 7.
+ *      Author: root
+ */
+
+#ifndef DYNAMICSCONTROL_H_
+#define DYNAMICSCONTROL_H_
+
+class DynamicsControl {
+public:
+	DynamicsControl();
+	virtual ~DynamicsControl();
+};
+
+#endif /* DYNAMICSCONTROL_H_ */

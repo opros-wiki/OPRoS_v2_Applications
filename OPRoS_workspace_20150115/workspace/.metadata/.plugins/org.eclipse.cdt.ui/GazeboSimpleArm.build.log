@@ -1,0 +1,25 @@
+11:16:31 **** Build of configuration Release for project GazeboSimpleArm ****
+make all 
+Building file: ../GazeboSimpleArm.cpp
+Invoking: GCC C++ Compiler
+g++ -I"/root/work/OPRoS_IDE_Linux_v2.0.8x86/workspace/GazeboJointMessage" -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include -O3 -Wall -c -fPIC -fmessage-length=0 -o "GazeboSimpleArm.o" "../GazeboSimpleArm.cpp" `pkg-config --cflags gazebo` && \
+	echo -n 'GazeboSimpleArm.d' ./ > 'GazeboSimpleArm.d' && \
+	g++ -MM -MG -P -w -I"/root/work/OPRoS_IDE_Linux_v2.0.8x86/workspace/GazeboJointMessage" -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device -I/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include -O3 -Wall -c -fPIC -fmessage-length=0   "../GazeboSimpleArm.cpp" `pkg-config --cflags gazebo` >> 'GazeboSimpleArm.d'
+In file included from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device/../archive/opros_archive.h:20:0,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device/ApiTypes.h:43,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device/OprosDevice.h:40,
+                 from /root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/device/Manipulator.h:39,
+                 from ../GazeboSimpleArm.h:14,
+                 from ../GazeboSimpleArm.cpp:2:
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/archive/opros_type_info.h: In member function ‘std::string enumNameSelector<T, N>::typeString()’:
+/root/work/OPRoS_IDE_Linux_v2.0.8x86/OPRoS_external_package/Linux/include/archive/opros_type_info.h:132:2: warning: no return statement in function returning non-void [-Wreturn-type]
+Finished building: ../GazeboSimpleArm.cpp
+ 
+Building target: libGazeboSimpleArm.so
+Invoking: GCC C++ Linker
+g++ -L"/root/work/OPRoS_IDE_Linux_v2.0.8x86/workspace/GazeboJointMessage/Release" -shared -o "libGazeboSimpleArm.so"  ./GazeboSimpleArm.o   -lGazeboJointMessage `pkg-config --libs protobuf` `pkg-config --libs gazebo` `pkg-config --libs sdformat`
+Finished building target: libGazeboSimpleArm.so
+ 
+
+11:16:37 Build Finished (took 5s.412ms)
+

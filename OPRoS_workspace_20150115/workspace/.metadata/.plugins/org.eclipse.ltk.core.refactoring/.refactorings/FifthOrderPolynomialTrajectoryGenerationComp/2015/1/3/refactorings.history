@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;FifthOrderPolynomialTrajectoryGenerationComp/TrajectoryProvidedService.h&apos; to &apos;TrajectoryGenerationServiceProvided_bak.h&apos;" description="Rename resource &apos;TrajectoryProvidedService.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="TrajectoryProvidedService.h" name="TrajectoryGenerationServiceProvided_bak.h" stamp="1421242351196" updateReferences="true"/>
+</session>

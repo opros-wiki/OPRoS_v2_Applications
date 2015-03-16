@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package_profile>
+	<id>b35ac30a-007e-40eb-8a39-cdf4939b0432</id>
+	<name>JointSpacePdControlApp</name>
+	<version>1.0</version>
+	<description />
+	<copyright>
+		<license_policy>OPRoS</license_policy>
+		<company>
+			<name />
+			<phone />
+			<address />
+			<homepage />
+		</company>
+	</copyright>
+	<subcomponents>
+		<subcomponent read_only="0" layout="60,311,397,218">
+			<node_id>robot1.node1</node_id>
+			<name>JointSpaceControlTestComp</name>
+			<id>eae3bb2d-4566-48a1-95ce-7cdd1ecbbbf0</id>
+			<version>1.0</version>
+			<type>original</type>
+			<reference>JointSpaceControlTestComp.xml</reference>
+			<port_layouts>
+				<port_layout port_name="JointSpaceControlCoordinatorService" port_type="service" port_dir="required" layout="441,427,266,32" />
+			</port_layouts>
+		</subcomponent>
+		<subcomponent read_only="0" layout="612,311,409,218">
+			<node_id>robot1.node1</node_id>
+			<name>JointSpaceControlCoodinatorComp</name>
+			<id>a9509665-067f-42fe-bae7-5b086818c4d0</id>
+			<version>1.0</version>
+			<type>original</type>
+			<reference>JointSpaceControlCoodinatorComp.xml</reference>
+			<port_layouts>
+				<port_layout port_name="JointSpaceControlService" port_type="service" port_dir="required" layout="735,513,161,47" />
+				<port_layout port_name="ManipulatorService" port_type="service" port_dir="required" layout="1005,427,152,32" />
+				<port_layout port_name="TrajectoryGenerationService" port_type="service" port_dir="required" layout="416,336,212,32" />
+				<port_layout port_name="JointSpaceControlCoordinatorService" port_type="service" port_dir="provided" layout="362,436,266,32" />
+			</port_layouts>
+		</subcomponent>
+		<subcomponent read_only="0" layout="1248,311,250,218">
+			<node_id>robot1.node1</node_id>
+			<name>ManipulatorComp</name>
+			<id>b4ee9455-2366-471e-81a7-0edbf5b14718</id>
+			<version>1.0</version>
+			<type>original</type>
+			<reference>ManipulatorComp.xml</reference>
+			<port_layouts>
+				<port_layout port_name="ManipulatorService" port_type="service" port_dir="provided" layout="1112,425,152,32" />
+			</port_layouts>
+		</subcomponent>
+		<subcomponent read_only="0" layout="60,588,610,200">
+			<node_id>robot1.node1</node_id>
+			<name>JointSpacePdControlWithGravityCompensationComp</name>
+			<id>5b77d05c-72f4-4fb2-abe4-223a54a207bf</id>
+			<version>1.0</version>
+			<type>original</type>
+			<reference>JointSpacePdControlWithGravityCompensationComp.xml</reference>
+			<port_layouts>
+				<port_layout port_name="JointSpaceControlService" port_type="service" port_dir="provided" layout="654,672,193,32" />
+			</port_layouts>
+		</subcomponent>
+		<subcomponent read_only="0" layout="60,48,504,200">
+			<node_id>robot1.node1</node_id>
+			<name>FifthOrderPolynomialTrajectoryGenerationComp</name>
+			<id>8c440082-7986-4b28-9e7f-cc5d6ea69731</id>
+			<version>1.0</version>
+			<type>original</type>
+			<reference>FifthOrderPolynomialTrajectoryGenerationComp.xml</reference>
+			<port_layouts>
+				<port_layout port_name="TrajectoryGenerationService" port_type="service" port_dir="provided" layout="548,144,212,32" />
+			</port_layouts>
+		</subcomponent>
+	</subcomponents>
+	<topics />
+	<port_connections>
+		<port_connection port_type="service">
+			<source component_name="JointSpaceControlCoodinatorComp" port_name="TrajectoryGenerationService" />
+			<target component_name="FifthOrderPolynomialTrajectoryGenerationComp" port_name="TrajectoryGenerationService" />
+			<bend_points />
+		</port_connection>
+		<port_connection port_type="service">
+			<source component_name="JointSpaceControlTestComp" port_name="JointSpaceControlCoordinatorService" />
+			<target component_name="JointSpaceControlCoodinatorComp" port_name="JointSpaceControlCoordinatorService" />
+			<bend_points />
+		</port_connection>
+		<port_connection port_type="service">
+			<source component_name="JointSpaceControlCoodinatorComp" port_name="JointSpaceControlService" />
+			<target component_name="JointSpacePdControlWithGravityCompensationComp" port_name="JointSpaceControlService" />
+			<bend_points />
+		</port_connection>
+		<port_connection port_type="service">
+			<source component_name="JointSpaceControlCoodinatorComp" port_name="ManipulatorService" />
+			<target component_name="ManipulatorComp" port_name="ManipulatorService" />
+			<bend_points />
+		</port_connection>
+	</port_connections>
+</package_profile>
+

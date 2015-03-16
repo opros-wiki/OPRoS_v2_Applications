@@ -1,0 +1,66 @@
+#pragma once
+
+#include <boost/bind.hpp>
+#include <gazebo/physics/physics.hh>
+#include <gazebo/common/common.hh>
+#include <gazebo/transport/transport.hh>
+#include <gazebo/msgs/msgs.hh>
+#include <gazebo/gazebo.hh>
+#include <pthread.h>
+
+#include "joint_effort_cmd.pb.h"
+#include "joint_status.pb.h"
+
+#include "Manipulator.h"
+
+typedef const boost::shared_ptr<const my_msgs::msgs::JointStatusResponse> JointStatusResponsePtr;
+typedef const boost::shared_ptr<const my_msgs::msgs::JointEffortCmdRequest> JointEffortCmdRequestPtr;
+
+class GazeboSimpleArm : public Manipulator
+{
+public:
+	GazeboSimpleArm(std::string mame);
+	virtual ~GazeboSimpleArm(void);
+
+public:
+	int32_t Initialize(OPRoS::Property props);
+	int32_t Finalize(void);
+	int32_t Enable(void);
+	int32_t Disable(void);
+	int32_t SetProperty(OPRoS::Property props);
+	int32_t GetProperty(OPRoS::Property &props);
+
+	int32_t RunHoming(void);
+
+	int32_t SetTorque(std::vector<OPRoS::Float64> torque);
+	int32_t GetTorque(std::vector<OPRoS::Float64> &torque);
+	int32_t SetVelocity(std::vector<OPRoS::Float64> velocity);
+	int32_t GetVelocity(std::vector<OPRoS::Float64> &velocity);
+	int32_t SetPosition(std::vector<OPRoS::Float64> position, std::vector<OPRoS::UInt32> time);
+	int32_t GetPosition(std::vector<OPRoS::Float64> &position);
+
+private:
+	OPRoS::Property _props;
+	size_t _numberOfJoints;
+
+private:
+	gazebo::transport::SubscriberPtr _sub;
+	gazebo::transport::PublisherPtr _pub;
+
+	pthread_mutex_t _mutex;
+	std::vector<double> _actualTorque;
+	std::vector<double> _actualVelocity;
+	std::vector<double> _actualPosition;
+
+public:
+	int Reset(void);
+	int Enable(void);
+	int Disable(void);
+
+	int SetTorque(std::vector<double> &torque);
+	int GetTorque(std::vector<double> &torque);
+	int GetVelocity(std::vector<double> &velocity);
+	int GetPosition(std::vector<double> &position);
+
+	void UpdateJointInfo(std::vector<double> &actualTorque, std::vector<double> &actualVelocity, std::vector<double> &actualPosition);
+};

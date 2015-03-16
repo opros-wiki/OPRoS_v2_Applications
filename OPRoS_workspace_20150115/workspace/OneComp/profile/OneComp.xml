@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component_profile>
+	<id>4c7f87a3-6423-4356-ad65-97b403073e61</id>
+	<name>OneComp</name>
+	<version>1.0</version>
+	<layout>36,132,421,265</layout>
+	<collapsed>0</collapsed>
+	<copyright>
+		<company>
+			<name>KITECH</name>
+			<phone>KITECH</phone>
+			<address>KITECH</address>
+			<homepage>KITECH</homepage>
+		</company>
+		<license_policy />
+	</copyright>
+	<execution_environment>
+		<library_type>so</library_type>
+		<library_name>libOneComp.so</library_name>
+		<impl_language>Linux C++</impl_language>
+		<compiler>Linux g++</compiler>
+		<app_domain />
+		<app_robot />
+	</execution_environment>
+	<execution_semantics>
+		<type>periodic</type>
+		<period>100</period>
+		<priority>5</priority>
+		<instance_creation>multiple</instance_creation>
+	</execution_semantics>
+	<properties>
+		<property name="Msg" type="std::string">opros</property>
+	</properties>
+	<data_type_list />
+	<defined_data_types>
+		<defined_data_type>PersonData.xml</defined_data_type>
+	</defined_data_types>
+	<defined_service_types>
+		<defined_service_type>PrintService.xml</defined_service_type>
+	</defined_service_types>
+	<exports>
+		<var name="count" type="int" />
+	</exports>
+	<ports>
+		<service_port>
+			<name>PrintService</name>
+			<description />
+			<type>PrintService</type>
+			<usage>required</usage>
+			<reference>PrintService.xml</reference>
+			<layout>441,156,107,32</layout>
+		</service_port>
+		<data_port>
+			<name>intDataOut</name>
+			<description />
+			<data_type>int</data_type>
+			<usage>output</usage>
+			<reference />
+			<layout>441,204,95,32</layout>
+		</data_port>
+		<data_port>
+			<name>personDataOut</name>
+			<description />
+			<data_type>PersonData</data_type>
+			<usage>output</usage>
+			<reference>PersonData.xml</reference>
+			<layout>441,254,126,32</layout>
+		</data_port>
+		<event_port>
+			<name>strEventOut</name>
+			<description />
+			<data_type>std::string</data_type>
+			<usage>output</usage>
+			<layout>441,336,102,32</layout>
+		</event_port>
+	</ports>
+</component_profile>
+

@@ -1,0 +1,17 @@
+/*
+ * JointSpaceControlTestDlg.h
+ *
+ *  Created on: 2014. 12. 20.
+ *      Author: root
+ */
+
+#ifndef JOINTSPACECONTROLTESTDLG_H_
+#define JOINTSPACECONTROLTESTDLG_H_
+
+class JointSpaceControlTestDlg {
+public:
+	JointSpaceControlTestDlg();
+	virtual ~JointSpaceControlTestDlg();
+};
+
+#endif /* JOINTSPACECONTROLTESTDLG_H_ */

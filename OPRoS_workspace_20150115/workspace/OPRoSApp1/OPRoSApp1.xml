@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package_profile>
+	<id>2b122569-997d-45f9-a47f-2c98387ba783</id>
+	<name>OPRoSApp1</name>
+	<version>1.0</version>
+	<description />
+	<copyright>
+		<license_policy>OPRoS</license_policy>
+		<company>
+			<name />
+			<phone />
+			<address />
+			<homepage />
+		</company>
+	</copyright>
+	<subcomponents>
+		<subcomponent read_only="0" layout="36,132,421,265">
+			<node_id>robot1.node1</node_id>
+			<name>OneComp</name>
+			<id>4c7f87a3-6423-4356-ad65-97b403073e61</id>
+			<version>1.0</version>
+			<type>original</type>
+			<reference>OneComp.xml</reference>
+			<port_layouts>
+				<port_layout port_name="PrintService" port_type="service" port_dir="required" layout="441,156,107,32" />
+				<port_layout port_name="intDataOut" port_type="data" port_dir="output" layout="441,204,95,32" />
+				<port_layout port_name="personDataOut" port_type="data" port_dir="output" layout="441,254,126,32" />
+				<port_layout port_name="strEventOut" port_type="event" port_dir="output" layout="441,336,102,32" />
+			</port_layouts>
+		</subcomponent>
+		<subcomponent read_only="0" layout="768,132,360,276">
+			<node_id>robot1.node1</node_id>
+			<name>TwoComp</name>
+			<id>05961ebd-d30d-4382-9f32-6ed568a14de8</id>
+			<version>1.0</version>
+			<type>original</type>
+			<reference>TwoComp.xml</reference>
+			<port_layouts>
+				<port_layout port_name="PrintService" port_type="service" port_dir="provided" layout="677,156,107,32" />
+				<port_layout port_name="intDataIn" port_type="data" port_dir="input" layout="698,216,86,32" />
+				<port_layout port_name="personDataIn" port_type="data" port_dir="input" layout="668,276,116,32" />
+				<port_layout port_name="strEventIn" port_type="event" port_dir="input" layout="691,353,93,32" />
+			</port_layouts>
+		</subcomponent>
+	</subcomponents>
+	<topics />
+	<port_connections>
+		<port_connection port_type="service">
+			<source component_name="OneComp" port_name="PrintService" />
+			<target component_name="TwoComp" port_name="PrintService" />
+			<bend_points />
+		</port_connection>
+		<port_connection port_type="data">
+			<source component_name="OneComp" port_name="intDataOut" />
+			<target component_name="TwoComp" port_name="intDataIn" />
+			<bend_points />
+		</port_connection>
+		<port_connection port_type="data">
+			<source component_name="OneComp" port_name="personDataOut" />
+			<target component_name="TwoComp" port_name="personDataIn" />
+			<bend_points />
+		</port_connection>
+		<port_connection port_type="event">
+			<source component_name="OneComp" port_name="strEventOut" />
+			<target component_name="TwoComp" port_name="strEventIn" />
+			<bend_points />
+		</port_connection>
+	</port_connections>
+</package_profile>
+

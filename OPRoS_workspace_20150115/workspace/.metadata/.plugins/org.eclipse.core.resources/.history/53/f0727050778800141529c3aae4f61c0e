@@ -1,0 +1,21 @@
+#include "JointSpaceControlTestDlgApp.h"
+
+bool JointSpaceControlTestDlgApp::OnInit()
+{
+	if(!wxApp::OnInit()) {
+		printf("[ERROR : JointSpaceControlTestDlgApp::OnInit() -> Can't initialize the wxApp::OnInit()");
+		dlg = NULL;
+		return false;
+	}
+
+	dlg = new JointSpaceControlTestDlg(wxT("Joint Space Control Component"), 500, 300);
+	dlg->Show(true);
+	SetTopWindow(dlg);
+
+	return true;
+}
+
+int JointSpaceControlTestDlgApp::OnRun()
+{
+	return 0;
+}

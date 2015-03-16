@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component_profile>
+	<id>eae3bb2d-4566-48a1-95ce-7cdd1ecbbbf0</id>
+	<name>JointSpaceControlTestComp</name>
+	<version>1.0</version>
+	<layout>60,311,395,276</layout>
+	<collapsed>0</collapsed>
+	<copyright>
+		<company>
+			<name>JointSpaceControlTestComp</name>
+			<phone />
+			<address />
+			<homepage />
+		</company>
+		<license_policy />
+	</copyright>
+	<execution_environment>
+		<library_type>so</library_type>
+		<library_name>libJointSpaceControlTestComp.so</library_name>
+		<impl_language>Linux C++</impl_language>
+		<compiler>Linux g++</compiler>
+		<app_domain />
+		<app_robot />
+	</execution_environment>
+	<execution_semantics>
+		<type>periodic</type>
+		<period>100</period>
+		<priority>5</priority>
+		<instance_creation>singleton</instance_creation>
+	</execution_semantics>
+	<properties />
+	<data_type_list />
+	<defined_data_types />
+	<defined_service_types>
+		<defined_service_type>JointSpaceControlCoorinatorService.xml</defined_service_type>
+	</defined_service_types>
+	<exports />
+	<ports>
+		<service_port>
+			<name>JointSpaceControlCoordinatorService</name>
+			<description />
+			<type>JointSpaceControlCoorinatorService</type>
+			<usage>required</usage>
+			<reference>JointSpaceControlCoorinatorService.xml</reference>
+			<layout>439,455,266,32</layout>
+		</service_port>
+	</ports>
+</component_profile>
+

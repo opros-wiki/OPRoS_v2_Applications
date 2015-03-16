@@ -1,0 +1,306 @@
+
+/*
+ *  Generated sources by OPRoS Component Generator (OCG V2.1 [Symbol,Topic])
+ *  
+ */
+
+#include <OPRoSInclude.h>
+#include <stdio.h>
+
+#include "JointSpaceControlCoodinatorComp.h"
+#include "OprosPrintMessage.h"
+
+//
+// constructor declaration
+//
+JointSpaceControlCoodinatorComp::JointSpaceControlCoodinatorComp()
+{
+	ptrTrajectoryGenerationService = NULL;
+	ptrManipulatorService = NULL;
+	ptrJointSpaceControlService = NULL;
+	
+	_isNewPosition = false;
+	_numberOfJoints = 0;
+	_nIndex = -1;
+
+	portSetup();
+}
+
+//
+// constructor declaration (with name)
+//
+JointSpaceControlCoodinatorComp::JointSpaceControlCoodinatorComp(const std::string &name):Component(name)
+{
+	ptrTrajectoryGenerationService = NULL;
+	ptrManipulatorService = NULL;
+	ptrJointSpaceControlService = NULL;
+
+	_isNewPosition = false;
+	_numberOfJoints = 0;
+	_nIndex = -1;
+	
+	portSetup();
+}
+
+//
+// destructor declaration
+//
+
+JointSpaceControlCoodinatorComp::~JointSpaceControlCoodinatorComp()
+{
+	onDestroy();
+}
+
+ReturnType JointSpaceControlCoodinatorComp::Enable()
+{
+	return ptrManipulatorService->Enable();
+}
+
+ReturnType JointSpaceControlCoodinatorComp::Disable()
+{
+	return ptrManipulatorService->Disable();
+}
+
+ReturnType JointSpaceControlCoodinatorComp::SetDesiredJointPosition(OPRoS::Float64Array desiredJointPosition, float64_t time)
+{
+	PrintMessage("INFO : JointSpaceControlCoodinatorComp::SetDesiredJointPosition().\n");
+
+	if(desiredJointPosition.data.size() != _numberOfJoints) {
+		return OPROS_BAD_INPUT_PARAMETER;
+	}
+
+	PrintMessage("INFO : JointSpaceControlCoodinatorComp::SetDesiredJointPosition() -> desiredJointPosition : ");
+	for(size_t i = 0; i < _numberOfJoints; i++) {
+		PrintMessage("%.3f\t", desiredJointPosition.data[i]);
+	}
+	PrintMessage("\n");
+
+	/*
+	_nIndex = -1;
+
+	_jointPositionTrajectory.resize(2);
+	_jointPositionTrajectory[0].resize(_numberOfJoints);		_jointPositionTrajectory[0][0] = 0.0;
+	_jointPositionTrajectory[0].resize(_numberOfJoints);		_jointPositionTrajectory[1][0] = time;
+
+	for(size_t i = 0; i < _numberOfJoints; i++) {
+		_jointPositionTrajectory[0][i+1] = _actualJointPosition[i].data;
+		_jointPositionTrajectory[1][i+1] = desiredJointPosition.data[i];
+	}
+
+	if(ptrTrajectoryGenerationService->GenerateTrajectory(_jointPositionTrajectory, 0.002) == OPROS_SUCCESS) {
+		_jointPositionTrajectory = ptrTrajectoryGenerationService->GetPosition();
+		_jointVelocityTrajectory = ptrTrajectoryGenerationService->GetVelocity();
+		_jointAccelerationTrajectory = ptrTrajectoryGenerationService->GetAcceleration();
+	}
+
+	_nIndex = 0;
+	*/
+}
+
+OPRoS::Float64Array JointSpaceControlCoodinatorComp::GetActualJointAcceleration()
+{
+	return _actualAcceleration;
+}
+
+OPRoS::Float64Array JointSpaceControlCoodinatorComp::GetActualJointVelocity()
+{
+	return _actualVelocity;
+}
+
+OPRoS::Float64Array JointSpaceControlCoodinatorComp::GetActualJointPosition()
+{
+	return _actualPosition;
+}
+
+void JointSpaceControlCoodinatorComp::portSetup() {
+	ProvidedServicePort *pa1;
+	pa1=new JointSpaceControlCoorinatorServiceProvided(this);
+	addPort("JointSpaceControlCoordinatorService",pa1);
+
+	ptrTrajectoryGenerationService=new TrajectoryGenerationServiceRequired();
+	addPort("TrajectoryGenerationService",ptrTrajectoryGenerationService);
+
+	ptrManipulatorService=new ManipulatorServiceRequired();
+	addPort("ManipulatorService",ptrManipulatorService);
+
+	ptrJointSpaceControlService=new JointSpaceControlServiceRequired();
+	addPort("JointSpaceControlService",ptrJointSpaceControlService);
+}
+
+// Call back Declaration
+ReturnType JointSpaceControlCoodinatorComp::onInitialize()
+{
+	PrintMessage("INFO : JointSpaceControlCoodinatorComp::onInitialize().\n");
+
+	return OPROS_SUCCESS;
+}
+
+ReturnType JointSpaceControlCoodinatorComp::onStart()
+{
+	PrintMessage("INFO : JointSpaceControlCoodinatorComp::onStart().\n");
+
+	OPRoS::Property props;
+	size_t numberOfActuators;
+
+	props = ptrManipulatorService->GetProperty();
+	if(props.FindName("NumberOfActuators") == false) {
+		printf("[ERROR] JointSpaceControlCoodinatorComp::onStart() -> Can't find the property(NumberOfActuators)\n");
+		return OPROS_INTERNAL_FAULT;
+	}
+	numberOfActuators = atoi(props.GetValue("NumberOfActuators").c_str());
+
+	props = ptrJointSpaceControlService->GetProperty();
+	if(props.FindName("NumberOfJoints") == false) {
+		printf("[ERROR] JointSpaceControlCoodinatorComp::onStart() -> Can't find the property(NumberOfJoints)\n");
+		return OPROS_INTERNAL_FAULT;
+	}
+	_numberOfJoints = atoi(props.GetValue("NumberOfJoints").c_str());
+
+	if(_numberOfJoints != numberOfActuators) {
+		printf("[ERROR] JointSpaceControlCoodinatorComp::onStart() -> NumberOfActuators and NumberOfJoints are different from each other.\n");
+		_numberOfJoints = 0;
+		return OPROS_INTERNAL_FAULT;
+	}
+
+	_actualAcceleration.resize(_nubmerOfJoints);
+	_actualVelocity.resize(_nubmerOfJoints);
+	_actualPosition.resize(_nubmerOfJoints);
+	_desiredAcceleration.resize(_nubmerOfJoints);
+	_desiredVelocity.resize(_nubmerOfJoints);
+	_desiredPosition.resize(_nubmerOfJoints);
+	_desiredTorque.resize(_nubmerOfJoints);
+
+	return OPROS_SUCCESS;
+}
+	
+ReturnType JointSpaceControlCoodinatorComp::onStop()
+{
+	// user code here
+	return OPROS_SUCCESS;
+}
+
+ReturnType JointSpaceControlCoodinatorComp::onReset()
+{
+	// user code here
+	return OPROS_SUCCESS;
+}
+
+ReturnType JointSpaceControlCoodinatorComp::onError()
+{
+	// user code here
+	return OPROS_SUCCESS;
+}
+
+ReturnType JointSpaceControlCoodinatorComp::onRecover()
+{
+	// user code here
+	return OPROS_SUCCESS;
+}
+
+ReturnType JointSpaceControlCoodinatorComp::onDestroy()
+{
+	// user code here
+	return OPROS_SUCCESS;
+}
+
+ReturnType JointSpaceControlCoodinatorComp::onEvent(Event *evt)
+{
+	// user code here
+	return OPROS_SUCCESS;
+}
+
+ReturnType JointSpaceControlCoodinatorComp::onExecute()
+{
+
+
+	_actualJointPosition = ptrManipulatorService->GetPosition();
+	_actualJointVelocity = ptrManipulatorService->GetVelocity();
+
+	for(size_t i = 0; i < _numberOfJoints; i++) {
+		actualAcceleration.data.push_back(0.0);
+		actualVelocity.data.push_back(_actualJointVelocity[i].data);
+		actualPosition.data.push_back(_actualJointPosition[i].data);
+	}
+
+	/*
+	if((_nIndex >= 0) && (_nIndex <= _numberOfJoints)) {
+
+
+		for(size_t i = 0; i < _numberOfJoints; i++) {
+			actualAcceleration.data[i] = _actualJointAcceleration[i].data;
+			actualVelocity.data[i] = _actualJointVelocity[i].data;
+			actualPosition.data[i] = _actualJointPosition[i].data;
+
+			desiredAcceleration.data[i] = _jointAccelerationTrajectory[_nIndex][i+1];
+			desiredVelocity.data[i] = _jointVelocityTrajectory[_nIndex][i+1];
+			desiredPosition.data[i] = _jointPositionTrajectory[_nIndex][i+1];
+		}
+
+		for(size_t i = 0; i < _numberOfJoints; i++) {
+			_desiredJointTorque[i].data = desiredTorque.data[i];
+		}
+	}
+	*/
+
+	ptrJointSpaceControlService->SetActualJointInfo(actualAcceleration, actualVelocity, actualPosition);
+	ptrJointSpaceControlService->SetDesiredJointInfo(desiredAcceleration, desiredVelocity, desiredPosition);
+	desiredTorque = ptrJointSpaceControlService->CalculateJointTorque();
+
+	for(size_t i = 0; i < _numberOfJoints; i++) {
+		_desiredTorque[i].data = desiredTorque.data[i];
+	}
+
+	ptrManipulatorService->SetTorque(_desiredTorque);
+
+	return OPROS_SUCCESS;
+}
+	
+ReturnType JointSpaceControlCoodinatorComp::onUpdated()
+{
+	// user code here
+	return OPROS_SUCCESS;
+}
+
+ReturnType JointSpaceControlCoodinatorComp::onPeriodChanged()
+{
+	// user code here
+	return OPROS_SUCCESS;
+}
+
+#ifndef MAKE_STATIC_COMPONENT
+#ifdef WIN32
+
+extern "C"
+{
+__declspec(dllexport) Component *getComponent();
+__declspec(dllexport) void releaseComponent(Component *pcom);
+}
+
+Component *getComponent()
+{
+	return new JointSpaceControlCoodinatorComp();
+}
+
+void releaseComponent(Component *com)
+{
+	delete com;
+}
+
+#else
+extern "C"
+{
+	Component *getComponent();
+	void releaseComponent(Component *com);
+}
+Component *getComponent()
+{
+	return new JointSpaceControlCoodinatorComp();
+}
+
+void releaseComponent(Component *com)
+{
+	delete com;
+}
+#endif
+#endif
+

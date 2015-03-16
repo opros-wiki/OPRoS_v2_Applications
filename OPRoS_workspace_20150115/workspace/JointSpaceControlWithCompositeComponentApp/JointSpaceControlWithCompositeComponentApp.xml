@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package_profile>
+	<id>20eba85d-4268-4f92-921f-a7146780d8b6</id>
+	<name>JointSpaceControlWithCompositeComponentApp</name>
+	<version>1.0</version>
+	<description />
+	<copyright>
+		<license_policy>OPRoS</license_policy>
+		<company>
+			<name />
+			<phone />
+			<address />
+			<homepage />
+		</company>
+	</copyright>
+	<subcomponents>
+		<subcomponent read_only="0" layout="924,336,433,200">
+			<node_id />
+			<name>JointSpaceControlCompositeComponent</name>
+			<id>8761fe3a-59e3-47b3-ba3f-c819cdbd8f67</id>
+			<version>1.0</version>
+			<type>composite</type>
+			<reference>JointSpaceControlCompositeComponent.xml</reference>
+			<port_layouts>
+				<port_layout port_name="JointSpaceControlCoordinatorService" port_type="service" port_dir="provided" layout="674,480,266,32" />
+			</port_layouts>
+		</subcomponent>
+		<subcomponent read_only="0" layout="432,336,250,200">
+			<node_id />
+			<name>JointSpaceControlTestComp</name>
+			<id>eae3bb2d-4566-48a1-95ce-7cdd1ecbbbf0</id>
+			<version>1.0</version>
+			<type>original</type>
+			<reference>JointSpaceControlTestComp.xml</reference>
+			<port_layouts>
+				<port_layout port_name="JointSpaceControlCoordinatorService" port_type="service" port_dir="required" layout="666,384,266,32" />
+			</port_layouts>
+		</subcomponent>
+	</subcomponents>
+	<topics />
+	<port_connections>
+		<port_connection port_type="service">
+			<source component_name="JointSpaceControlTestComp" port_name="JointSpaceControlCoordinatorService" />
+			<target component_name="JointSpaceControlCompositeComponent" port_name="JointSpaceControlCoordinatorService" />
+			<bend_points />
+		</port_connection>
+	</port_connections>
+</package_profile>
+

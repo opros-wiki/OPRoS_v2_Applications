@@ -1,0 +1,18 @@
+/*
+ * ManipulatorControl.cpp
+ *
+ *  Created on: 2014. 12. 7.
+ *      Author: root
+ */
+
+#include "ManipulatorControl.h"
+
+ManipulatorControl::ManipulatorControl() {
+	// TODO Auto-generated constructor stub
+
+}
+
+ManipulatorControl::~ManipulatorControl() {
+	// TODO Auto-generated destructor stub
+}
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="installedFeatures">
+		<item value="org.eclipse.cdt.gdb:7.0.0.201302132326"/>
+		<item value="org.eclipse.cdt:8.1.2.201302132326"/>
+		<item value="org.eclipse.draw2d:3.9.0.201212170307"/>
+		<item value="org.eclipse.gef:3.9.0.201212170307"/>
+		<item value="org.eclipse.help:1.4.1.v20120912-145617-8R7xFOXFLWUl7PpMEeZNIGkb4"/>
+		<item value="org.eclipse.platform:3.8.1.v20130118-180812-9jF7oIBFG8eU2pim-VbIlTuQjY0RWWK3x-bv4I"/>
+		<item value="org.eclipse.rcp:3.8.2.v20130118-180157-96BuGOZFxwOAeG8Ofmqicz0tPK"/>
+		<item value="org.opros2.ce.feature:1.0.0"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="565" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="377" key="DIALOG_HEIGHT"/>
+		<item value="316" key="DIALOG_Y_ORIGIN"/>
+		<item value="711" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.cdt.ui.wizards.NewCWizard1" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.cdt.ui.newCWizards"/>
+		</list>
+	</section>
+</section>

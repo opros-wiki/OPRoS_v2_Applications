@@ -1,0 +1,40 @@
+13:18:19 **** Build of configuration Release for project sdffddddd ****
+make all 
+Building file: ../sdffddddd.cpp
+Invoking: GCC C++ Compiler
+g++ -I/home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include -O2 -g -Wall -c -fPIC -fmessage-length=0 -o "sdffddddd.o" "../sdffddddd.cpp" && \
+	echo -n 'sdffddddd.d' ./ > 'sdffddddd.d' && \
+	g++ -MM -MG -P -w -I/home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include -O2 -g -Wall -c -fPIC -fmessage-length=0   "../sdffddddd.cpp" >> 'sdffddddd.d'
+In file included from /home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/OPRoSTypes.h:53:0,
+                 from /home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/Event.h:18,
+                 from /home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/Component.h:18,
+                 from /home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/OPRoSInclude.h:8,
+                 from ../sdffddddd.cpp:7:
+/home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/archive/opros_type_info.h: In member function ?˜std::string enumNameSelector<T, N>::typeString()??
+/home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/archive/opros_type_info.h:132:2: warning: no return statement in function returning non-void [-Wreturn-type]
+  }
+  ^
+In file included from /home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/SymbolService.h:24:0,
+                 from /home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/ServiceUtils.h:18,
+                 from /home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/OPRoSInclude.h:16,
+                 from ../sdffddddd.cpp:7:
+/home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/RequiredMethod.h: In constructor ?˜RequiredMethod<void>::RequiredMethod(const string&, int)??
+/home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/RequiredMethod.h:915:6: warning: ?˜RequiredMethod<void>::m_arity??will be initialized after [-Wreorder]
+  int m_arity;
+      ^
+/home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/RequiredMethod.h:931:31: warning:   base ?˜RequiredMethodInterface??[-Wreorder]
+   RequiredMethodInterface(name) {
+                               ^
+/home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/include/RequiredMethod.h:929:2: warning:   when initialized here [-Wreorder]
+  RequiredMethod(const std::string &name, int arity) :
+  ^
+Finished building: ../sdffddddd.cpp
+ 
+Building target: libsdffddddd.so
+Invoking: GCC C++ Linker
+g++ -L/home/edsw/OPRoS_OUTPUT/OPRoS_IDE3/OPRoS_external_package/Linux/lib -shared -o "libsdffddddd.so"  ./sdffddddd.o   -lOPRoSCDL
+Finished building target: libsdffddddd.so
+ 
+
+13:18:20 Build Finished (took 986ms)
+

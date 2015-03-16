@@ -1,0 +1,12 @@
+#pragma once
+
+#include "wx/wx.h"
+
+class JointSpaceControlTestDlg : public wxDialog
+{
+public:
+	JointSpaceControlTestDlg(const wxChar *title, int x, int y);
+	virtual ~JointSpaceControlTestDlg(void);
+
+	wxPanel *m_panel;
+};
