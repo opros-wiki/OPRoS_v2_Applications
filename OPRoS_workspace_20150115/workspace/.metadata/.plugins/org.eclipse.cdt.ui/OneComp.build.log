@@ -1,7 +1,0 @@
-01:36:31 **** Clean-only build of configuration Release for project OneComp ****
-make clean 
-rm -rf  ./OneComp.o  ./OneComp.d  libOneComp.so
- 
-
-01:36:31 Build Finished (took 53ms)
-

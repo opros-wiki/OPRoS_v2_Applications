@@ -1,7 +1,0 @@
-Manifest-Version:1.0
-Archive-type:OPRoS_Component
-Archive-name:OneComp.tar
-Archive-description:
-Archive-Element:OneComp.xml
-Shared-library:lib/
-

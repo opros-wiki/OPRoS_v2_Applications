@@ -1,7 +1,0 @@
-Manifest-Version:1.0
-Archive-type:OPRoS_Component
-Archive-name:JointSpacePdControlWithGravityCompensationComp.tar
-Archive-description:
-Archive-Element:JointSpacePdControlWithGravityCompensationComp.xml
-Shared-library:lib/
-

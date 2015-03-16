@@ -1,7 +1,0 @@
-01:36:30 **** Clean-only build of configuration Release for project ElmoCan ****
-make clean 
-rm -rf  ./ElmoCan.o  ./ElmoCan.d  libElmoCan.so
- 
-
-01:36:30 Build Finished (took 257ms)
-

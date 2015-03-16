@@ -1,7 +1,0 @@
-Manifest-Version:1.0
-Archive-type:OPRoS_Component
-Archive-name:JointSpaceInverseDynamicsControlComp.tar
-Archive-description:
-Archive-Element:JointSpaceInverseDynamicsControlComp.xml
-Shared-library:lib/
-

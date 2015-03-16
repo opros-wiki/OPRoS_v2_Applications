@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;ManipulatorComp/ManipulatorProvided.h&apos; to &apos;ManipulatorServiceProvided_bak.h&apos;" description="Rename resource &apos;ManipulatorProvided.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="ManipulatorProvided.h" name="ManipulatorServiceProvided_bak.h" stamp="1421239528429" updateReferences="true"/>
-</session>

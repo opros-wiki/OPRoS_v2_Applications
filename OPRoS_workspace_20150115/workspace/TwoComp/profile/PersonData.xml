@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="euc-kr"?>
-<data_type>
-	<struct name="PersonData">
-		<item type="int">age</item>
-		<item type="std::string">name</item>
-	</struct>
-</data_type>
-

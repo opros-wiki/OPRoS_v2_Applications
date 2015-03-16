@@ -1,7 +1,0 @@
-Manifest-Version:1.0
-Archive-type:OPRoS_Component
-Archive-name:JointSpaceLyaponovBasedControlComp.tar
-Archive-description:
-Archive-Element:JointSpaceLyaponovBasedControlComp.xml
-Shared-library:lib/
-
